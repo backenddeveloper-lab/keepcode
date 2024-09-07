@@ -12,7 +12,7 @@ Route::post('/logout', [Auth::class, 'logout'])->middleware(AuthenticateCheck::c
 
 Route::post('/items/{item}/buy', [Rent::class, 'buy'])->middleware(AuthenticateCheck::class);
 Route::post('/items/{item}/rent', [Rent::class, 'rent'])->middleware(AuthenticateCheck::class);
-Route::post('/items/{item}/status', [Rent::class, 'itemStatus'])->middleware(AuthenticateCheck::class);
+Route::get('/items/{item}/status', [Rent::class, 'itemStatus'])->middleware(AuthenticateCheck::class);
 Route::get('/user/transactions', [Rent::class, 'transactionHistory'])->middleware(AuthenticateCheck::class);
 
 

@@ -40,7 +40,7 @@ class Rent extends Controller
     public function transactionHistory(Request $request)
     {
         return $this->send(
-            $this->rentService->getTransactionHistory($request->user(), $request->per_page ?? 1)
+            $this->rentService->getTransactionHistory($request->user(), $request->per_page ?? 10)
         );
     }
 
